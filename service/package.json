@@ -1,0 +1,36 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosayon/nyc-eat-clean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosayon/nyc-eat-clean/issues"
+  },
+  "homepage": "https://github.com/yosayon/nyc-eat-clean#readme",
+  "dependencies": {
+    "config": "^2.0.1",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-async-errors": "^3.1.1",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
+    "helmet": "^3.14.0",
+    "joi": "^14.0.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.3.4",
+    "nodemon": "^1.18.4",
+    "underscore": "^1.9.1",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {}
+}
