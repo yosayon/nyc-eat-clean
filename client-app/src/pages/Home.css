@@ -1,8 +1,3 @@
-.homepage-image{
-  height: 15%;
-  width: 100%;
-}
-
 .homepage-container{
   color: white;
   display: flex;
@@ -10,8 +5,4 @@
   justify-content: center;
   align-items: center;
   background-color: #03405f;
-}
-
-.image-container{
-  top: 50px;
 }

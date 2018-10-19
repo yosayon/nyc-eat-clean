@@ -6,6 +6,7 @@ export default class Search extends Component{
     return(
       <div className="search-container">
         <div className="nyc-restaurants">NYC RESTAURANTS</div>
+
         <div className="input-group mb-3">
           <div className="input-group-prepend">
             <button
@@ -15,7 +16,6 @@ export default class Search extends Component{
               aria-haspopup="true"
               aria-expanded="false"> All &#8595;
             </button>
-
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/">A</a>
               <a class="dropdown-item" href="/">B</a>
@@ -26,15 +26,13 @@ export default class Search extends Component{
             type="text"
             class="form-control"
           />
-
           <button
             type="button"
             class="btn btn-success">
             Search
           </button>
-
         </div>
-    </div>
+      </div>
     )
   }
 }
