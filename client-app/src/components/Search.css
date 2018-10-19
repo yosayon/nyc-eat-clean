@@ -1,0 +1,12 @@
+.search-container{
+  padding-top: 50px;
+  height: 200px;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-end;
+}
+
+.nyc-restaurants{
+  align-self: center;
+  font-size: 24px;
+}
