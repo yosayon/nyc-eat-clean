@@ -12,7 +12,7 @@ export default class Navbar extends Component{
   render(){
     return(
       <nav className="navbar">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
            <img className="thomas-logo" src={thomasLogo}/>
         </a>
         {this.state.location === "/restaurants" ?
