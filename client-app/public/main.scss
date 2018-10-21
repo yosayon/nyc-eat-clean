@@ -1,0 +1,17 @@
+$secondary: #00334d;
+$primary: #03405f;
+$info: #50C5EF;
+$light: #FFF;
+$green: #28a745;
+$success: $green;
+$yellow: #ffc107;
+$warning: $yellow;
+$red: #dc3545;
+$danger: $red;
+$gray-800: #343a40;
+$dark: $gray-800;
+$theme-colors: ();
+$theme-colors: map-merge((primary: $primary, secondary: $secondary, success: $success, info: $info, warning: $warning, danger: $danger, light: $light, dark: $dark), $theme-colors);
+$blue: #50C5EF;
+
+@import "../node_modules/bootstrap/scss/bootstrap"
