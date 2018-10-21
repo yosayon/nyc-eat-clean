@@ -26,8 +26,8 @@
   position: relative;
   align-items: center;
   justify-content: space-evenly;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-color: white;
   border: 5px #03405f solid;
 }

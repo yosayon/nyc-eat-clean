@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router , Route } from 'react-router-dom'
+import {BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
+import Restaurants from './pages/Restaurants'
 
 class App extends Component {
   state = {
     searchText: 'search',
+    location: "home",
     data: []
   }
 
   render() {
     return (
-      <Router>
-        <div>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/restaurants' component={Restaurants}
-        </div>
-      </Router>
+      <BrowserRouter>
+        <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/restaurants' component={Restaurants}/>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
