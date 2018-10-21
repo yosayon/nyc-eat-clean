@@ -1,0 +1,20 @@
+.restaurants-page-container{
+  height: 650px;
+  display: flex;
+  flex-flow: column;
+}
+
+.header-container{
+  height: 20%;
+}
+
+.header-image-container{
+  display: flex;
+  height: 200px;
+  background: no-repeat center/110% url('../images/restaurant-header.jpg');
+}
+
+#header-pic{
+  width: 100%;
+
+}
