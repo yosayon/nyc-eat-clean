@@ -7,6 +7,11 @@ import './Restaurants.css'
 export default class Restaurants extends Component{
 
   render(){
+    const { data } = this.props
+    const restaurants = [];
+    if(data){
+      data.map((r,i) => restaurants.push(<Card id={i} name={r.name} cuisine={r.cuisine} building={r.building} street={r.street} boro={r.boro} zipcode={r.zipcode} phone={r.phone} imageUrl={r.imageUrl} grade={r.grade}/>))
+    }
     return(
       <div className="restaurants-page-container">
         <Navbar
@@ -16,7 +21,7 @@ export default class Restaurants extends Component{
 
           <div className="header-container">
             <div className="header-image-container">
-              SEARCH: {this.props.searchText}
+              <h1>SEARCH: {this.props.searchText}</h1>
             </div>
           </div>
 
@@ -46,16 +51,13 @@ export default class Restaurants extends Component{
               </div>
             </div>
             <div>
-              viewing 1 - 30 of 260
+              {this.props.count} results found
             </div>
           </div>
 
 
           <div class="restaurant-cards-container py-5 px-5 mb-sm-4 bg-light">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {restaurants}
           </div>
 
           <div className="pagination-container">

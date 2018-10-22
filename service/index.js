@@ -20,14 +20,14 @@ const schema = buildSchema(`
   }
   type Restaurant {
     name: String
-    cuisine: String!
-    building: String!
-    street: String!
-    boro: String!
-    zipcode: String!
-    phone: String!
-    searchText: String!
-    imageUrl: String!
+    cuisine: String
+    building: String
+    street: String
+    boro: String
+    zipcode: String
+    phone: String
+    searchText: String
+    imageUrl: String
     grade: String
   }
 `)
@@ -43,10 +43,10 @@ const root = {
     const filterGrade = {
       A: { grade: "A" },
       B: { grade: "B" },
-      C: { grade: "C" },
-      Z: { grade: "Z" },
-      other: { grade: {$in:["Not Yet Graded", null]}},
-      All: { grade: {$in: ["A", "B", "C", "Z","Not Yet Graded", null]}}
+      C: { grade: "C" }
+      // Z: { grade: "Z" },
+      // other: { grade: {$in:["Not Yet Graded", null]}},
+      // All: { grade: {$in: ["A", "B", "C", "Z","Not Yet Graded", null]}}
     }
     const string = new RegExp('\.\*'+text+'\.\*', 'i')
     const restaurants = await Restaurant.find({ searchText: string})

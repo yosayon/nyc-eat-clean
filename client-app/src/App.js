@@ -16,8 +16,14 @@ class App extends Component {
     redirect: false
   }
 
+  onChangeFilter = (grade) => {
+    this.setState({...this.state, filter: grade})
+    console.log(this.state)
+  }
+
   onChangeSearchText = (e) => {
     this.setState({...this.state, searchText: e.target.value})
+    console.log(this.state)
   }
 
   handleSearch = () => {
@@ -26,6 +32,12 @@ class App extends Component {
         searchText(text: $text, filter: $filter, sort: $sort, pageSize: $pageSize, pageNumber: $pageNumber){
           name
           cuisine
+          street
+          boro
+          zipcode
+          phone
+          imageUrl
+          grade
         }
       }`
     const variables = {
@@ -58,13 +70,10 @@ class App extends Component {
                 {...props}
                 onChangeSearchText={this.onChangeSearchText}
                 handleSearch={this.handleSearch}
+                onChangeFilter={this.onChangeFilter}
+                filter={this.state.filter}
                 searchText={this.state.searchText}
                 filter={this.state.filter}
-                sort={this.state.sort}
-                pageSize={this.state.pageSize}
-                pageNumber={this.state.pageNumber}
-                data={this.state.data}
-                count={this.state.count}
                 redirect={this.state.redirect}
                 />}
               />

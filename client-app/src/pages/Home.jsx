@@ -23,6 +23,8 @@ export default class Home extends Component{
               searchText={this.props.searchText}
               onChangeSearchText={this.props.onChangeSearchText}
               handleSearch={this.props.handleSearch}
+              filter={this.props.filter}
+              onChangeFilter={this.props.onChangeFilter}
             />
           </div>
             <ImageContainer />

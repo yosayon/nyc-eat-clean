@@ -14,12 +14,13 @@ export default class Search extends Component{
               id="basic-addon1"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false"> All &#8595;
+              aria-expanded="false"> {this.props.filter} &#8595;
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/">A</a>
-              <a class="dropdown-item" href="/">B</a>
-              <a class="dropdown-item" href="/">C</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" onClick={() => this.props.onChangeFilter("All")}> All</a>
+              <a className="dropdown-item" onClick={() => this.props.onChangeFilter("A")} >A</a>
+              <a className="dropdown-item" onClick={() => this.props.onChangeFilter("B")} >B</a>
+              <a className="dropdown-item" onClick={() => this.props.onChangeFilter("C")} >C</a>
             </div>
           </div>
           <input

@@ -1,48 +1,50 @@
 import React from 'react'
-import sample from '../images/homepage.jpg'
+// import sample from '../images/homepage.jpg'
 import './Card.css'
 import seal from '../images/Nyc-seal-blue.png'
-import a from '../images/a.png'
-import b from '../images/b.png'
-import c from '../images/c.png'
+import A from '../images/a.png'
+import B from '../images/b.png'
+import C from '../images/c.png'
 import GP from '../images/GP.png'
-
 
 const style = "height: 200px; width: 100%; display: block;"
 const width = "width: 18rem;"
 
-
-const Card = () => {
+const Card = ({name, cuisine, building, street, boro, zipcode, phone, grade, imageUrl}) => {
+  let gradePic = ''
+  if(grade === "A"){
+    gradePic = <img src={A} className="grade" alt="grade" />
+  }else if(grade === "B"){
+    gradePic = <img src={B} className="grade" alt="grade" />
+  }else if(grade === "C"){
+    gradePic = <img src={C} className="grade" alt="grade" />
+  }else {
+    gradePic = <img src={GP} className="grade" alt="grade" />
+  }
   return(
     <div class="card-wrapper pb-5 px-3">
       <div className="grade-card">
-        <img
-          src={seal}
-          className="seal"
-        />
-        <img
-          src={a}
-          className="grade"
-        />
+        <img src={seal} className="seal" alt="seal" />
+        {gradePic}
       </div>
       <div class="card" style={{width}}>
         <img
           className="card-img-top"
           style={{style}}
-          src={sample}
+          src={imageUrl}
           data-holder-rendered="true"
-          alt="photo"
+          alt={name}
         />
         <div className="card-body">
           <div className="card-title text-primary">
-            Los Tacos No. 1
+            {name}
           </div>
           <p className="card-text">
-            Restaurant Name
+            {cuisine}
             <br />
-            Restaurant Address
+            {building} {street} {boro} NY {zipcode}
             <br />
-            Phone number
+            {phone}
           </p>
         </div>
       </div>
