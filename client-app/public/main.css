@@ -58,7 +58,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: gray;
   text-align: left;
   background-color: #fff; }
 
@@ -1821,7 +1821,7 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
 
 .btn-info {
-  color: #212529;
+  color: #FFF;
   background-color: #50C5EF;
   border-color: #50C5EF; }
   .btn-info:hover {
@@ -2114,13 +2114,14 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem; }
+  border-radius: 0.3rem;
+ }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 0.2rem; }
+  border-radius: 0rem; }
 
 .btn-block {
   display: block;
@@ -2320,6 +2321,7 @@ input[type="button"].btn-block {
 .btn-group-vertical {
   position: relative;
   display: inline-flex;
+  padding-left: 0.5rem;
   vertical-align: middle; }
   .btn-group > .btn,
   .btn-group-vertical > .btn {
@@ -5247,7 +5249,6 @@ button.bg-dark:focus {
   z-index: 1030; }
 
 .fixed-bottom {
-  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;

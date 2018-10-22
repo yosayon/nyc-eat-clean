@@ -1,6 +1,5 @@
 import React from 'react'
 import sample from '../images/homepage.jpg'
-// import Grade from './Grade'
 import './Card.css'
 import seal from '../images/Nyc-seal-blue.png'
 import a from '../images/a.png'
