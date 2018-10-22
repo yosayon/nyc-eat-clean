@@ -10,7 +10,7 @@ const ImageContainer = () => {
   return(
     <div className="image-container">
       <div className="image-card-container">
-        <div className="grade-card">
+        <div className="grade-card-home">
           <img
             src={seal}
             className="seal"
@@ -20,7 +20,7 @@ const ImageContainer = () => {
             className="grade"
           />
         </div>
-        <div className="grade-card">
+        <div className="grade-card-home">
           <img
             src={seal}
             className="seal"
@@ -30,7 +30,7 @@ const ImageContainer = () => {
             className="grade"
           />
         </div>
-        <div className="grade-card">
+        <div className="grade-card-home">
           <img
             src={seal}
             className="seal"
@@ -40,7 +40,7 @@ const ImageContainer = () => {
             className="grade"
           />
         </div>
-        <div className="grade-card">
+        <div className="grade-card-home">
           <img
             src={seal}
             className="seal"

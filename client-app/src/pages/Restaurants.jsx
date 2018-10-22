@@ -9,18 +9,17 @@ export default class Restaurants extends Component{
     return(
       <div className="restaurants-page-container">
         <Navbar location={this.props.location}/>
-        <div className="header-container">
-          <div className="header-image-container">
-            HI this is my header
-          </div>
-        </div>
-        <div class="restaurant-cards-container">
+          <div className="header-container">
+            <div className="header-image-container">
 
-        <div class="sort-filter-container">
-          <div class="btn-group">
-            <button class="btn btn-info btn-sm dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          Grade
-            </button>
+            </div>
+          </div>
+
+          <div class="sort-filter-container">
+            <div class="btn-group">
+              <button class="btn btn-info btn-sm dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Grade
+              </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="/">A</a>
                 <a class="dropdown-item" href="/">B</a>
@@ -28,11 +27,11 @@ export default class Restaurants extends Component{
                 <a class="dropdown-item" href="/">Z</a>
                 <a class="dropdown-item" href="/">Not Yet Graded</a>
               </div>
-          </div>
-          <div class="btn-group">
-            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort
-            </button>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort
+              </button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="/">Name</a>
                 <a class="dropdown-item" href="/">Cuisine</a>
@@ -40,9 +39,13 @@ export default class Restaurants extends Component{
               </div>
             </div>
           </div>
-          <Card />
 
-        </div>
+          <div class="restaurant-cards-container py-5 px-5 mb-sm-4 bg-light">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
         <Footer />
       </div>
     )
