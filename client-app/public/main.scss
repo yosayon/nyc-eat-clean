@@ -13,5 +13,7 @@ $dark: $gray-800;
 $theme-colors: ();
 $theme-colors: map-merge((primary: $primary, secondary: $secondary, success: $success, info: $info, warning: $warning, danger: $danger, light: $light, dark: $dark), $theme-colors);
 $blue: #50C5EF;
+$font-family-sans-serif: "Whitney A","Whitney B","Helvetica Neue",Arial,sans-serif;
+$font-family-monospace: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 
 @import "../node_modules/bootstrap/scss/bootstrap"
