@@ -1,0 +1,49 @@
+.grade-card{
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 120px;
+  left: 200px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px #03405f solid;
+}
+
+@media (max-width: 4000px){
+  .grade-card{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 120px;
+    left: 180px;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border: 1px #03405f solid;
+  }
+}
+
+@media (max-width: 990px){
+  .grade-card{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 120px;
+    left: 150px;
+    width: 80px;
+    height: 90px;
+    background-color: white;
+    border: 1px #03405f solid;
+  }
+}
+
+@media (max-width: 760px){
+
+}
