@@ -5,14 +5,18 @@ import Card from '../components/Card'
 import './Restaurants.css'
 
 export default class Restaurants extends Component{
+
   render(){
     return(
       <div className="restaurants-page-container">
-        <Navbar location={this.props.location}/>
+        <Navbar
+          location={this.props.location}
+          searchText={this.props.searchText}
+        />
 
           <div className="header-container">
             <div className="header-image-container">
-
+              SEARCH: {this.props.searchText}
             </div>
           </div>
 

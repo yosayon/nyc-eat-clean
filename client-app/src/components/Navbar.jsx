@@ -17,7 +17,7 @@ export default class Navbar extends Component{
         </a>
         {this.state.location === "/restaurants" ?
         (<div className="input-container">
-          <input className="input" type="text" placeholder="Search"/>
+          <input className="input" type="text" placeholder={this.props.searchText}/>
           <div className="icon-container">
             <i className="fa fa-search fa-cog" aria-hidden="true"></i>
           </div>

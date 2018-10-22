@@ -25,10 +25,14 @@ export default class Search extends Component{
           <input
             type="text"
             class="form-control"
+            value={this.props.searchText}
+            onChange={(e) => this.props.onChangeSearchText(e)}
           />
           <button
             type="button"
-            class="btn btn-success">
+            class="btn btn-success"
+            onClick={this.props.handleSearch}
+          >
             Search
           </button>
         </div>
