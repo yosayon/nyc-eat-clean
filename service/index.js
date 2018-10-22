@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors');
 const app = express()
 const mongoose = require('mongoose')
 const winston = require('winston')
@@ -14,12 +15,11 @@ const { graphql, buildSchema } = require('graphql')
 
 const schema = buildSchema(`
   type Query {
-    allRestaurants: [Restaurant!]!
-    searchText(text: String!, filter: String, sort: String, pageSize: Int, pageNumber: Int) : [Restaurant!]!
+    allRestaurants: [Restaurant]
+    searchText(text: String!, filter: String, sort: String, pageSize: Int, pageNumber: Int) : [Restaurant]
   }
-
   type Restaurant {
-    name: String!
+    name: String
     cuisine: String!
     building: String!
     street: String!
@@ -39,25 +39,27 @@ const root = {
     const restaurants = await Restaurant.find({}).limit(10)
     return restaurants
   },
-  searchText: async function({ text, filter = "All", sort = "name", pageSize = 10, pageNumber = 2 }){
+  searchText: async function({ text, filter = "All", sort = "name", pageSize = 100, pageNumber = 2 }){
     const filterGrade = {
       A: { grade: "A" },
       B: { grade: "B" },
       C: { grade: "C" },
       Z: { grade: "Z" },
-      other: { grade: {$in:["Not Yet Graded", null]}}
+      other: { grade: {$in:["Not Yet Graded", null]}},
+      All: { grade: {$in: ["A", "B", "C", "Z","Not Yet Graded", null]}}
     }
     const string = new RegExp('\.\*'+text+'\.\*', 'i')
     const restaurants = await Restaurant.find({ searchText: string})
     .where(filterGrade[filter])
-    .skip((pageNumber - 1) * pageSize)
-    .limit(pageSize)
+    // .skip((pageNumber - 1) * pageSize)
+    // .limit(pageSize)
     .sort(sort)
     return restaurants
   }
 }
 
 app.use(express.json())
+app.use(cors())
 app.use(helmet())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -66,6 +68,12 @@ app.use('/graphql', graphqlHTTP({
   rootValue: root,
   graphiql: true
 }))
+
+
+// app.get('/restaurants', async(req,res) => {
+//   const restaurant = await Restaurant.find({cuisine: "Korean"})
+//   res.send(restaurant)
+// })
 
 mongoose.connect(uri, OPTS)
   .then(() => winston.info('Connected to MongoDB...'))
