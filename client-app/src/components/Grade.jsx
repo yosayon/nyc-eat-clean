@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import seal from '../images/Nyc-seal-blue.png'
 import './ImageContainer.css'
-import './Grade.css'
+import './Card.css'
 import a from '../images/a.png'
 import b from '../images/b.png'
 import c from '../images/c.png'

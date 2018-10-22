@@ -1,6 +1,7 @@
 .card-wrapper{
   width: 33.333%;
   height: 325px;
+  position: relative;
 }
 
 .restaurant-cards-container{
@@ -13,6 +14,40 @@
   height: 100%;
   width: 100%;
 }
+
+.grade-card{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 40%;
+  right: 8%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 25%;
+  width: 85px;
+  background-color: white;
+  border: 1px #03405f solid;
+  z-index: 1;
+}
+
+.seal{
+  height: 75%;
+  z-index: 1;
+}
+
+.grade{
+  position: absolute;
+  height: 60%;
+  z-index: 2;
+}
+
+.grade-pending{
+  position: absolute;
+  height: 30%;
+  z-index: 2;
+}
+
 
 @media all and (max-width: 800px) {
 .card-wrapper{
@@ -47,5 +82,41 @@
   margin-top: 7px;
   height: 100%;
   width: 100%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .grade-card{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 40%;
+    right: 8%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25%;
+    width: 85px;
+    background-color: white;
+    border: 1px #03405f solid;
+    z-index: 1;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .grade-card{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 40%;
+    right: 8%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 35%;
+    width: 35%;
+    background-color: white;
+    border: 1px #03405f solid;
+    z-index: 1;
   }
 }

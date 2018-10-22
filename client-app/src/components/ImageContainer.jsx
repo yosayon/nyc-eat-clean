@@ -13,41 +13,41 @@ const ImageContainer = () => {
         <div className="grade-card-home">
           <img
             src={seal}
-            className="seal"
+            className="seal-home"
           />
           <img
             src={a}
-            className="grade"
+            className="grade-home"
           />
         </div>
         <div className="grade-card-home">
           <img
             src={seal}
-            className="seal"
+            className="seal-home"
           />
           <img
             src={b}
-            className="grade"
+            className="grade-home"
           />
         </div>
         <div className="grade-card-home">
           <img
             src={seal}
-            className="seal"
+            className="seal-home"
           />
           <img
             src={c}
-            className="grade"
+            className="grade-home"
           />
         </div>
         <div className="grade-card-home">
           <img
             src={seal}
-            className="seal"
+            className="seal-home"
           />
           <img
             src={GP}
-            className="grade-pending"
+            className="grade-pending-home"
           />
         </div>
       </div>
