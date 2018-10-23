@@ -44,3 +44,30 @@
   padding-bottom: 2%;
   justify-content: center;
 }
+
+.header-text {
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  align-content: flex-start;
+  justify-content: center;
+  height: 100%;
+  left: 10%;
+  font-size: 25px;
+  color: #C0C0C0;
+  opacity: 0.9;
+}
+
+.search-text{
+  width: 120px;
+  padding-left: 5px;
+  background-color: white;
+}
+
+.search-result{
+  width: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #50C5EF;
+  color: white;
+}

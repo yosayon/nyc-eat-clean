@@ -3,9 +3,16 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
 import './Restaurants.css'
+import { request } from 'graphql-request'
 
 export default class Restaurants extends Component{
-
+  shouldComponentUpdate = (nextProps) => {
+    if(nextProps.data !== this.props.data){
+      return true;
+    }else{
+      return false;
+    }
+  }
   render(){
     const { data } = this.props
     const restaurants = [];
@@ -21,7 +28,14 @@ export default class Restaurants extends Component{
 
           <div className="header-container">
             <div className="header-image-container">
-              <h1>SEARCH: {this.props.searchText}</h1>
+              <div className="header-text">
+                <div className="search-text">
+                  SEARCH:
+                </div>
+                <div className="search-result">
+                  {this.props.searchText}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -29,24 +43,24 @@ export default class Restaurants extends Component{
             <div className="sort-filter">
               <div class="btn-group">
                 <button class="btn btn-info btn-sm dropdown-toggle " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                  Grade
+                  {this.props.filter}
                 </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/">A</a>
-                  <a class="dropdown-item" href="/">B</a>
-                  <a class="dropdown-item" href="/">C</a>
-                  <a class="dropdown-item" href="/">Z</a>
-                  <a class="dropdown-item" href="/">Not Yet Graded</a>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" onClick={() => this.props.onChangeFilter("All")}>All</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeFilter("A")} >A</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeFilter("B")} >B</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeFilter("C")} >C</a>
                 </div>
               </div>
               <div class="btn-group">
                 <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Sort
+                  {this.props.sort}
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/">Name</a>
-                  <a class="dropdown-item" href="/">Cuisine</a>
-                  <a class="dropdown-item" href="/">Borough</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("name", true)} >name</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("grade", true)} >grade</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("boro", true)} >boro</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("cuisine", true)} >cuisine</a>
                 </div>
               </div>
             </div>
