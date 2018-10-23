@@ -1,3 +1,8 @@
+[x] connect to mongodb
+[x] use mongoose
+[x] one endpoint
+[x] express
+[x] graphQL
 [x] search
 [x] filter
 [x] sort
