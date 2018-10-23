@@ -1,6 +1,4 @@
 import React from 'react'
-// import sample from '../images/homepage.jpg'
-import './Card.css'
 import seal from '../images/Nyc-seal-blue.png'
 import A from '../images/a.png'
 import B from '../images/b.png'

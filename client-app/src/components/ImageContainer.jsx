@@ -1,5 +1,4 @@
 import React from 'react'
-import './ImageContainer.css'
 import seal from '../images/Nyc-seal-blue.png'
 import a from '../images/a.png'
 import b from '../images/b.png'

@@ -6,7 +6,6 @@ import Footer from '../components/Footer'
 import axios from 'axios'
 import { Route, Redirect } from 'react-router-dom'
 import Restaurants from './Restaurants'
-import './Home.css'
 
 export default class Home extends Component{
   render(){

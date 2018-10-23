@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
-import './Restaurants.css'
 import { request } from 'graphql-request'
 
 export default class Restaurants extends Component{
+
   shouldComponentUpdate = (nextProps) => {
     if(nextProps.data !== this.props.data){
       return true;
@@ -13,6 +13,7 @@ export default class Restaurants extends Component{
       return false;
     }
   }
+
   render(){
     const { data } = this.props
     const restaurants = [];
@@ -24,6 +25,8 @@ export default class Restaurants extends Component{
         <Navbar
           location={this.props.location}
           searchText={this.props.searchText}
+          onChangeSearchText={this.props.onChangeSearchText}
+          handleSearch={this.props.handleSearch}
         />
 
           <div className="header-container">
@@ -57,10 +60,10 @@ export default class Restaurants extends Component{
                   {this.props.sort}
                 </button>
                 <div class="dropdown-menu">
-                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("name", true)} >name</a>
-                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("grade", true)} >grade</a>
-                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("boro", true)} >boro</a>
-                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("cuisine", true)} >cuisine</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("name")} >name</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("grade")} >grade</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("boro")} >boro</a>
+                  <a className="dropdown-item" onClick={() => this.props.onChangeSort("cuisine")} >cuisine</a>
                 </div>
               </div>
             </div>
@@ -79,9 +82,11 @@ export default class Restaurants extends Component{
               <ul className="pagination">
                 <li className="page-item disabled"><a className="page-link" href="#" tabindex="-1">Previous</a></li>
                 <li className="page-item"><a className="page-link" href="#">1</a></li>
-                <li className="page-item active"><a className="page-link" href="#">2 <span className="sr-only">(current)</span></a></li>
+                <li className="page-item"><a className="page-link" href="#">2 <span className="sr-only">(current)</span></a></li>
                 <li className="page-item"><a className="page-link" href="#">3</a></li>
-                <li className="page-item"><a className="page-link" href="#">Next</a></li>
+                <li className="page-item">
+                  <a className="page-link" >Next</a>
+                </li>
               </ul>
             </nav>
 

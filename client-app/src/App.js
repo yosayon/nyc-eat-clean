@@ -3,23 +3,33 @@ import {BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Restaurants from './pages/Restaurants'
 import { request } from 'graphql-request'
-import './pages/Home.css'
+import './App.css'
 
 class App extends Component {
   state = {
     searchText: "",
     filter: "All",
     sort: "name",
-    pageSize: 10,
-    pageNumber: 2,
+    pageSize: 0,
+    pageNumber: 1,
     data: [],
     count: 0,
     redirect: false,
     loading: false
   }
 
+  // nextPage = () => {
+  //   this.setState({
+  //     ...this.state,
+  //     pageNumber: this.state.pageNumber + 1
+  //   })
+  // }
+
   componentDidUpdate = (prevProps, prevState) => {
     if(prevState.filter !== this.state.filter){
+      this.handleSearch()
+    }
+    if(prevState.sort !== this.state.sort){
       this.handleSearch()
     }
   }
@@ -31,7 +41,7 @@ class App extends Component {
     })
   }
 
-  onChangeSort = (sortValue, sortNow) => {
+  onChangeSort = (sortValue) => {
     this.setState({...this.state, sort: sortValue})
   }
 
@@ -51,7 +61,7 @@ class App extends Component {
           zipcode
           phone
           imageUrl
-          grade
+          grade,
         }
       }`
     const variables = {
@@ -72,7 +82,7 @@ class App extends Component {
         loading: false
       })
     })
-    }
+  }
 
   render() {
     const { redirect } = this.state
@@ -96,9 +106,10 @@ class App extends Component {
               exact path='/restaurants'
               render={(props) => <Restaurants
                 {...props}
+                onChangeSearchText={this.onChangeSearchText}
                 handleSearch={this.handleSearch}
                 onChangeFilter={this.onChangeFilter}
-                onChangeSort={this.props.onChangeSort}
+                onChangeSort={this.onChangeSort}
                 searchText={this.state.searchText}
                 filter={this.state.filter}
                 sort={this.state.sort}

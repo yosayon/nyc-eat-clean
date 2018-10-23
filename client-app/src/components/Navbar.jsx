@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './Navbar.css'
 import thomasLogo from '../images/thomas_logo.png'
 
 export default class Navbar extends Component{
-
   state = {
     location: this.props.location.pathname
   }
@@ -17,10 +15,16 @@ export default class Navbar extends Component{
         </a>
         {this.state.location === "/restaurants" ?
         (<div className="input-container">
-          <input className="input" type="text" placeholder={this.props.searchText}/>
+          <input
+            className="input"
+            type="text"
+            placeholder={this.props.searchText}
+            onChange={(e) => this.props.onChangeSearchText(e)}
+          />
           <div className="icon-container">
-            <i className="fa fa-search fa-cog" aria-hidden="true"></i>
+            <i className="fa fa-search fa-cog" aria-hidden="true" onClick={() => this.props.handleSearch()}></i>
           </div>
+
         </div>) : null}
 
       </nav>
